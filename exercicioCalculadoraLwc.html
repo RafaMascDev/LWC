@@ -1,0 +1,32 @@
+<template> 
+    <lightning-card title = "Calculadora"> 
+    <div class="slds-box slds-theme_shade">  
+     <lightning-input type="number" name="input1" label="Número 1" onchange={handleNumberOeChange} class='primeiroValor' value={PrimeiroNumero} placeholder="Digite o primeiro número"></lightning-input>  
+     <lightning-input type="number" name="input2" label="Número 2" onchange={handleNumberTwoChange} class='segundoValor' value={SegundoNumero} placeholder="Digite o segundo número"></lightning-input>  
+   </div>  
+
+    <div class="slds-box slds-theme_shade">  
+     <lightning-button label="Somar" onclick={Somar}> </lightning-button>  
+     <lightning-button label="Multiplicar" onclick={Multiplicar}> </lightning-button>  
+     <lightning-button label="Subtrair" onclick={Subtrair}> </lightning-button>  
+     <lightning-button label="Dividir" onclick={Dividir}> </lightning-button>  
+    </div>  
+
+    <div class="slds-box slds-theme_shade">  
+    
+        <lightning-button label="=" onclick={Calcular}> </lightning-button>  
+
+        <lightning-button label="Limpar" onclick={handleClickDelet}></lightning-button> 
+       </div>    
+
+    </lightning-card>
+
+    <template if:true={visivel}> 
+        <lightning-card>
+            <div class="slds-box slds-theme_shade">  
+                <b>O resultado da operação é : </b>  
+                <P>{resultadoDaOperacao}</p>  
+            </div> 
+        </lightning-card> 
+    </template>
+</template>     
